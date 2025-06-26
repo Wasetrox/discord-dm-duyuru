@@ -1,4 +1,3 @@
-// src/commands/dm-gonder.js
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const emoji = {
     success: '✅',
