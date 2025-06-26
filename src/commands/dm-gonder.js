@@ -1,9 +1,13 @@
+// src/commands/dm-gonder.js
 const { SlashCommandBuilder, EmbedBuilder } = require('discord.js');
 const emoji = {
     success: '✅',
     error: '❌',
     loading: '⏳'
 };
+
+// Gecikme fonksiyonu
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -46,9 +50,13 @@ module.exports = {
             try {
                 await member.send(message);
                 sent++;
-            } catch {
+                console.log(`✅ DM başarıyla gönderildi: ${member.user.tag}`);
+            } catch (error) {
                 failed++;
+                console.log(`❌ DM gönderilemedi: ${member.user.tag} - Hata: ${error.message}`);
             }
+            // Her DM arasında 1 saniye gecikme
+            await delay(1000);
         }
 
         embed.setDescription(`${emoji.success} **Başarıyla gönderildi:** ${sent} üye\n${emoji.error} **Gönderilemedi:** ${failed} üye`);
