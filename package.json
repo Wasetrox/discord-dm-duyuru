@@ -1,0 +1,24 @@
+{
+    "name": "discord-duyuru-botu",
+    "version": "1.0.0",
+    "description": "Gelişmiş bir discord dm duyuru botu.",
+    "main": "wase.js",
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "scripts": {
+        "start": "node wase.js"
+    },
+    "dependencies": {
+        "@discordjs/voice": "^0.18.0",
+        "discord.js": "^14.15.3"
+    },
+    "author": "Wasetrox",
+    "license": "MIT",
+
+    "keywords": [
+        "discord",
+        "bot",
+        "discord dm duyuru"
+    ]
+}
